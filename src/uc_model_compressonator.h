@@ -4,7 +4,7 @@
 
 #include <memory>
 #include <vector>
-#include <uc_dev/gx/img/img.h>
+#include <uc/img/img.h>
 
 #include <Compressonator.h>
 #include "uc_model_swizzle.h"

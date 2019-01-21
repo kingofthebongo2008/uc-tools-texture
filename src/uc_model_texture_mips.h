@@ -4,7 +4,7 @@
 
 #include "uc_model_exception.h"
 
-#include <uc_dev/gx/img/img.h>
+#include <uc/img/img.h>
 
 namespace uc
 {

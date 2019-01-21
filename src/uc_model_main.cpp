@@ -10,23 +10,18 @@
 
 #include <boost/program_options.hpp>
 
-#include <uc_dev/fnd/string_hash.h>
-#include <uc_dev/lip/lip.h>
-#include <uc_dev/gx/lip/model.h>
-#include <uc_dev/lip/tools_time_utils.h>
-#include <uc_dev/gx/img/img.h>
-#include <uc_dev/os/windows/com_initializer.h>
-#include <uc_dev/lzham/lzham.h>
-
+#include <uc/lip/lip.h>
+#include <uc/gx/lip/model.h>
+#include <uc/lip/tools_time_utils.h>
+#include <uc/img/img.h>
+#include <uc/os/windows/com_initializer.h>
+#include <uc/lzham/lzham_compressor.h>
 
 #include "uc_model_command_line.h"
 
 #include "uc_model_compressonator.h"
 #include "uc_model_swizzle.h"
 #include "uc_model_texture.h"
-#include <uc_dev/mem/alloc.h>
-
-#include "simple_ispc.h"
 
 
 namespace uc
@@ -41,12 +36,12 @@ namespace uc
             if (storage == lip::storage_format::unknown)
             {
                 uc::lip::texture2d m = create_texture_2d(input_file_name);
-                uc::lip::serialize_object(&m, output_file_name);
+                uc::lip::serialize_object(&m, output_file_name, uc::lzham::compress_buffer);
             }
             else
             {
                 uc::lip::texture2d m = create_texture_2d(input_file_name, storage, view);
-                uc::lip::serialize_object(&m, output_file_name);
+                uc::lip::serialize_object(&m, output_file_name, uc::lzham::compress_buffer);
             }
         }
     }
@@ -54,13 +49,7 @@ namespace uc
 
 inline std::string get_environment()
 {
-#if defined(_X86)
-    return "x86";
-#endif
-
-#if defined(_X64)
     return "x64";
-#endif
 }
 
 

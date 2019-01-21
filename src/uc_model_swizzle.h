@@ -3,7 +3,7 @@
 #pragma once
 
 #include <vector>
-#include <uc_dev/gx/img/img.h>
+#include <uc/img/img.h>
 
 namespace uc
 {
