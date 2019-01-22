@@ -5,6 +5,14 @@ image: Visual Studio 2019 Preview
 configuration: Release
 platform: x64
 clone_folder: c:\projects
+install:
+  - cd c:\projects
+  - git submodule update --init --recursive
+build_script:
+- cmd: >-
+    nuget restore c:\projects\build\build.sln
+
+    msbuild c:\projects\build\build.sln /p:Configuration="Release" /verbosity:quiet
 artifacts:
 - path: '*.nupkg'
   name: Stefan Dyulgerov
@@ -33,7 +41,7 @@ deploy:
 notifications:
 - provider: Slack
   incoming_webhook: https://hooks.slack.com/services/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
-  channel: uc-imaging
+  channel: uc-serialization
   template: Builds
   on_build_success: true
   on_build_failure: true
