@@ -42,7 +42,6 @@ notifications:
 - provider: Slack
   incoming_webhook: https://hooks.slack.com/services/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
   channel: uc-serialization
-  template: Builds
   on_build_success: true
   on_build_failure: true
   on_build_status_changed: false
