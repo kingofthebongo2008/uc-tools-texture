@@ -12,6 +12,10 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Allows Native C++ Applications to use precompiled lzham</description>
     <tags>texture,unique,uc,creator,pipeline</tags>
+    <dependencies>
+        <dependency id="amd-compressonator-2-3-0" version="2.3.3" targetFramework="native" />
+        <dependency id="uc-lzham-desktop"/>
+    </dependencies>
   </metadata>
   <files>
     <file src = "bin\win-x64\Release\uc-texture.exe" target = "bin" />
