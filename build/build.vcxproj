@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\uc-texture.1.0.2\build\native\uc-texture.props" Condition="Exists('packages\uc-texture.1.0.2\build\native\uc-texture.props')" />
   <Import Project="packages\uc-core.1.0.4\build\native\uc-core.props" Condition="Exists('packages\uc-core.1.0.4\build\native\uc-core.props')" />
   <Import Project="packages\amd-compressonator-2-3-0.2.3.3\build\native\amd-compressonator-2-3-0.props" Condition="Exists('packages\amd-compressonator-2-3-0.2.3.3\build\native\amd-compressonator-2-3-0.props')" />
   <Import Project="packages\uc-serialization.1.0.34\build\native\uc-serialization.props" Condition="Exists('packages\uc-serialization.1.0.34\build\native\uc-serialization.props')" />
@@ -41,6 +42,7 @@
     <Import Project="packages\uc-serialization.1.0.34\build\native\uc-serialization.targets" Condition="Exists('packages\uc-serialization.1.0.34\build\native\uc-serialization.targets')" />
     <Import Project="packages\amd-compressonator-2-3-0.2.3.3\build\native\amd-compressonator-2-3-0.targets" Condition="Exists('packages\amd-compressonator-2-3-0.2.3.3\build\native\amd-compressonator-2-3-0.targets')" />
     <Import Project="packages\uc-core.1.0.4\build\native\uc-core.targets" Condition="Exists('packages\uc-core.1.0.4\build\native\uc-core.targets')" />
+    <Import Project="packages\uc-texture.1.0.2\build\native\uc-texture.targets" Condition="Exists('packages\uc-texture.1.0.2\build\native\uc-texture.targets')" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -95,5 +97,7 @@
     <Error Condition="!Exists('packages\amd-compressonator-2-3-0.2.3.3\build\native\amd-compressonator-2-3-0.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\amd-compressonator-2-3-0.2.3.3\build\native\amd-compressonator-2-3-0.targets'))" />
     <Error Condition="!Exists('packages\uc-core.1.0.4\build\native\uc-core.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\uc-core.1.0.4\build\native\uc-core.props'))" />
     <Error Condition="!Exists('packages\uc-core.1.0.4\build\native\uc-core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\uc-core.1.0.4\build\native\uc-core.targets'))" />
+    <Error Condition="!Exists('packages\uc-texture.1.0.2\build\native\uc-texture.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\uc-texture.1.0.2\build\native\uc-texture.props'))" />
+    <Error Condition="!Exists('packages\uc-texture.1.0.2\build\native\uc-texture.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\uc-texture.1.0.2\build\native\uc-texture.targets'))" />
   </Target>
 </Project>

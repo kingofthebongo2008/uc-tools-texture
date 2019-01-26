@@ -5,9 +5,5 @@
 <ClInclude Include = "..\src\pch\pch.h"/>	
 <ClInclude Include = "..\src\pch\targetver.h"/>	
 <ClInclude Include = "..\src\uc_model_command_line.h"/>	
-<ClInclude Include = "..\src\uc_model_compressonator.h"/>	
-<ClInclude Include = "..\src\uc_model_exception.h"/>	
-<ClInclude Include = "..\src\uc_model_swizzle.h"/>	
-<ClInclude Include = "..\src\uc_model_texture.h"/>	
-<ClInclude Include = "..\src\uc_model_texture_mips.h"/>
+<ClInclude Include = "..\src\uc_model_exception.h"/>
 </ItemGroup></Project> 
