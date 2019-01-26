@@ -16,31 +16,27 @@
 #include <uc/img/img.h>
 #include <uc/os/windows/com_initializer.h>
 #include <uc/lzham/lzham_compressor.h>
+#include <uc/import/texture/texture.h>
 
 #include "uc_model_command_line.h"
 
-#include "uc_model_compressonator.h"
-#include "uc_model_swizzle.h"
-#include "uc_model_texture.h"
-
-
 namespace uc
 {
-    namespace model
+    namespace import
     {
         void convert_texture( const std::string& input_file_name, const std::string& output_file_name, const std::string& texture_format )
         {
-            auto storage = string_to_storage_format(texture_format);
-            auto view = string_to_view_format(texture_format);
+            auto storage = texture::string_to_storage_format(texture_format);
+            auto view = import::texture::string_to_view_format(texture_format);
 
             if (storage == lip::storage_format::unknown)
             {
-                uc::lip::texture2d m = create_texture_2d(input_file_name);
+                uc::lip::texture2d m = texture::create_texture_2d(input_file_name);
                 uc::lip::serialize_object(&m, output_file_name, uc::lzham::compress_buffer);
             }
             else
             {
-                uc::lip::texture2d m = create_texture_2d(input_file_name, storage, view);
+                uc::lip::texture2d m = texture::create_texture_2d(input_file_name, storage, view);
                 uc::lip::serialize_object(&m, output_file_name, uc::lzham::compress_buffer);
             }
         }
@@ -55,14 +51,15 @@ inline std::string get_environment()
 
 int32_t main(int32_t argc, const char* argv[])
 {
+    using namespace uc::import;
     using namespace uc::model;
 
     std::string input_model_error = "uc_dev_texture_r.exe";
 
     try
     {
-        uc::os::windows::com_initializer com;
-        compressonator::initializer       compressonator;
+        uc::os::windows::com_initializer           com;
+        texture::compressonator::initializer       compressonator;
 
         //
         // ShutdownBCLibrary - Shutdown the BC6H or BC7 library
