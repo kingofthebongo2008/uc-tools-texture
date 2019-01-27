@@ -39,5 +39,7 @@
     <None Include="$(MSBuildThisFileDirectory)..\..\lib\native\*.dll" />
     <None Include="$(MSBuildThisFileDirectory)..\bin\win-x64\*.dll" />
     <None Include="packages.config" />
+    <None Include="$(MSBuildThisFileDirectory)..\..\lib\native\*.dll" />
+    <None Include="$(MSBuildThisFileDirectory)..\bin\win-x64\*.dll" />
   </ItemGroup>
 </Project>
