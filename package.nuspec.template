@@ -14,7 +14,7 @@
     <tags>texture,unique,uc,creator,pipeline</tags>
     <dependencies>
         <dependency id="amd-compressonator-2-3-0" version="2.3.3" targetFramework="native" />
-        <dependency id="uc-lzham-desktop"/>
+        <dependency id="uc-lzham-desktop" targetFramework="native"/>
     </dependencies>
   </metadata>
 
