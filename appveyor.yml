@@ -7,7 +7,6 @@ platform: x64
 clone_folder: c:\projects-aeuyt9bin5u4tc9y
 install:
   - cd c:\projects-aeuyt9bin5u4tc9y
-  - git submodule update --init --recursive
 build_script:
 - cmd: >-
     nuget restore c:\projects-aeuyt9bin5u4tc9y\build\build.sln
