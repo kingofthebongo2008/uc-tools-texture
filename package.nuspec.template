@@ -3,18 +3,19 @@
   <metadata>
     <id>uc-tools-texture</id>
     <version>@version</version>
+
     <title>uc-tools-texture</title>
     <authors>Stefan Dyulgerov</authors>
     <owners>kingofthebongo2009</owners>
-    <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
     <projectUrl>https://blogs.msdn.microsoft.com/pix/winpixeventruntime/</projectUrl>
-    <iconUrl>http://www.gravatar.com/avatar/df362936893270e6a1b53807fa90e8fa</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Allows Native C++ Applications to use precompiled lzham</description>
     <tags>texture,unique,uc,creator,pipeline</tags>
     <dependencies>
-        <dependency id="amd-compressonator-2-3-0" version="2.3.3" targetFramework="native" />
-        <dependency id="uc-lzham-desktop" targetFramework="native"/>
+         <group targetFramework="native">
+        <dependency id="amd-compressonator-2-3-0" version="2.3.3" />
+        <dependency id="uc-lzham-desktop" />    
+        </group>
     </dependencies>
   </metadata>
 
