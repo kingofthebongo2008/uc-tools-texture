@@ -17,7 +17,12 @@
         <dependency id="uc-lzham-desktop"/>
     </dependencies>
   </metadata>
+
   <files>
-    <file src = "bin\win-x64\Release\uc-texture.exe" target = "bin" />
+    <file src = "bin\win-x64\Release\*.exe" target = "lib\native" />
+    <file src = "bin\win-x64\Release\*.dll" target = "lib\native" />
+    <file src = "build\uc-tools-texture.targets" target = "build\native" />
+    <file src = "build\uc-tools-texture.props" target = "build\native" />
   </files>
+
 </package>
